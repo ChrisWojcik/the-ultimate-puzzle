@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+    <title>The Ultimate Puzzle Solver</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <style>
+        body {
+            font-size: 16px;
+            min-height: 1200px;
+        }
+
+        .octagon {
+            display: inline;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .octagon-shape {
+            width: 100px;
+            height: 100px;
+            background: black;
+            position: absolute;
+            display: block;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%) scale(0.10);
+            transform: translate(-50%, -50%) scale(0.10);
+        }
+
+        .octagon-shape:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-bottom: 29px solid black;
+            border-left: 29px solid #fff;
+            border-right: 29px solid #fff;
+            width: 42px;
+            height: 0;
+        }
+
+        .octagon-shape:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-top: 29px solid black;
+            border-left: 29px solid #fff;
+            border-right: 29px solid #fff;
+            width: 42px;
+            height: 0;
+        }
+
+        li { margin-bottom: 1em; }
+
+        #message {
+            position: fixed;
+            z-index: 999;
+            top: 30px;
+            left: 50%;
+            margin-left: -75px;
+            width: 150px;
+            height: auto;
+            box-sizing: border-box;
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            font-size: 18px;
+            padding: 5px;
+            border-radius: 5px;
+            text-align: center;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div id="message">Solving&nbsp;&nbsp;&nbsp;</div>
+    <ol></ol>
+    <script src="index.js"></script>
+</body>
+</html>
